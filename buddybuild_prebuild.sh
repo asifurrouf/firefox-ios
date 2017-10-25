@@ -5,6 +5,9 @@
 # that we have some insight in beta usage.
 #
 
+bundle install  
+bundle exec danger --fail-on-errors=false  
+
 if [ "$BUDDYBUILD_SCHEME" == FirefoxBeta ]; then
   echo "Setting Adjust environment to SANDBOX for $BUDDYBUILD_SCHEME"
   /usr/libexec/PlistBuddy -c "Set AdjustAppToken $ADJUST_KEY_BETA" "Client/Info.plist"
